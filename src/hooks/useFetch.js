@@ -4,8 +4,8 @@ import axios from "axios";
 axios.defaults.baseURL = "https://api.up2tom.com/v3";
 axios.defaults.headers.common[
   "Authorization"
-] = `Token ${process.env.REACT_APP_TOKEN}`;
-
+] = `Token 9307bfd5fa011428ff198bb37547f979`;
+//console.log(process.env.REACT_APP_TOKEN)
 const useFetch = () => {
   const [response, setResponse] = useState(null);
   const [error, setError] = useState(null);

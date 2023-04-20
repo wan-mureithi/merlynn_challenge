@@ -1,11 +1,12 @@
+//an alternative of creating a reusable custom hook to do queries using axios
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-axios.defaults.baseURL = "https://api.up2tom.com/v3";
+axios.defaults.baseURL = process.env.REACT_APP_BASE_URL;
 axios.defaults.headers.common[
   "Authorization"
-] = `Token 9307bfd5fa011428ff198bb37547f979`;
-//console.log(process.env.REACT_APP_TOKEN)
+] = `Token ${process.env.REACT_APP_TOKEN}`;
+
 const useFetch = () => {
   const [response, setResponse] = useState(null);
   const [error, setError] = useState(null);

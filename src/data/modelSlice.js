@@ -22,6 +22,15 @@ export const apiSlice = createApi({
                 method: 'GET'
             })
         }),
+        getDecision: builder.mutation({
+            query({body, modelId}) {
+                return {
+                    url: `/decision/${modelId}`,
+                    method:'POST',
+                    body
+                }
+            }
+        }),
         readBatch: builder.query({
             query: (modelID) => ({
                 url: `/batch/${modelID}`,
@@ -32,5 +41,6 @@ export const apiSlice = createApi({
 })
 export const {
     useReadModelsQuery,
-    useReadBatchQuery
+    useReadBatchQuery,
+    useGetDecisionMutation
 } = apiSlice
